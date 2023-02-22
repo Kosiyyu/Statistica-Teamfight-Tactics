@@ -1,12 +1,13 @@
 package statisticatft.statisticatft;
 
+import lombok.Data;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 
 @Service
 public class RiotAPIService {
 
-    private final RiotAPIConfiguration riotAPIConfiguration;
+    private RiotAPIConfiguration riotAPIConfiguration;
 
     public RiotAPIService(RiotAPIConfiguration riotAPIConfiguration) {
         this.riotAPIConfiguration = riotAPIConfiguration;

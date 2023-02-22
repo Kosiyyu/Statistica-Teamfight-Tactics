@@ -1,6 +1,6 @@
 riot:
   api:
-    header:
-    token:
+    header: ${API_HEADER}
+    token: ${API_TOKEN}
 
 
