@@ -13,8 +13,15 @@ public class RiotAPIService {
         this.riotAPIConfiguration = riotAPIConfiguration;
     }
 
-    public String getBrazilianChallengerPlayers() {
-        String url = "https://br1.api.riotgames.com/tft/league/v1/challenger";
+    public String getChallengerPlayers(Region region) {
+        //https://" + region + ".api.riotgames.com/tft/status/v1/platform-data
+        String url = "https://" + region + ".api.riotgames.com/tft/status/v1/platform-data";
         return riotAPIConfiguration.basicRequest(url, HttpMethod.GET).getBody();
     }
+
+    public String searchSummonerBySummonerName(Region region, String summonerName) {
+        String url = "https://" + region + ".api.riotgames.com/tft/summoner/v1/summoners/by-name/" + summonerName;
+        return riotAPIConfiguration.basicRequest(url, HttpMethod.GET).getBody();
+    }
+
 }

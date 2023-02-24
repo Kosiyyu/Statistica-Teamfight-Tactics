@@ -23,7 +23,6 @@ public class RiotAPIConfiguration {
     public ResponseEntity<String> basicRequest(String url, HttpMethod method){
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders httpHeaders = new HttpHeaders();
-        //httpHeaders.set("Content-Type", "application/json");
         httpHeaders.set(header, token);
         HttpEntity<String> httpEntity = new HttpEntity(httpHeaders);
         return restTemplate.exchange(url, method, httpEntity, String.class);
