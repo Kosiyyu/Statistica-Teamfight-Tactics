@@ -1,8 +1,8 @@
 package statisticatft.statisticatft;
 
-import lombok.Data;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
+import statisticatft.statisticatft.tftsummonerv1.Region;
 
 @Service
 public class RiotAPIService {

@@ -1,4 +1,4 @@
-package statisticatft.statisticatft;
+package statisticatft.statisticatft.tftsummonerv1;
 
 public enum Region {
 

@@ -1,4 +1,4 @@
-package statisticatft.statisticatft.notyetentity;
+package statisticatft.statisticatft.tftsummonerv1;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
