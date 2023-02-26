@@ -1,6 +1,6 @@
 # Statistica-Teamfight-Tactics
 
-Implementation of Riot API for Teamfight-Tactics as spring-boot backend application.
+Implementation of Riot API for Teamfight-Tactics as spring-boot rest application.
 
 ## Under Development
 
