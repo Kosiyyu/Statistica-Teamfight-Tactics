@@ -1,5 +1,7 @@
 package statisticatft.statisticatft.tftsummonerv1;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,7 +9,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
+@Entity(name = "Summoner")
 public class Summoner {
+
+    @Id
     private String accountId;       //Encrypted account ID. Max length 56 characters.
     private int profileIconId;      //ID of the summoner icon associated with the summoner.
     private long revisionDate;      //Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: profile icon change, playing the tutorial or advanced tutorial, finishing a game, summoner name change

@@ -16,13 +16,20 @@ import statisticatft.statisticatft.tftsummonerv1.Region;
 public class SummonerController {
 
     private final RiotAPIService riotAPIService;
+    private SummonerService summonerService;
 
     @GetMapping("{region}/searchbysummonername/{summonerName}")
     public ResponseEntity<Summoner> getSummonerByName(@PathVariable Region region, @PathVariable String summonerName) throws JsonProcessingException {
         String jsonBody = riotAPIService.searchSummonerBySummonerName(region, summonerName);
+
+        //map json string to Summoner object todo: validate json string or mapper??
         ObjectMapper mapper = new ObjectMapper();
         Summoner summoner = mapper.readValue(jsonBody, Summoner.class);
-        //do something with summoner object
+
+        //todo: check if summoner already exists in db
+        //save to db
+        summonerService.saveSummoner(summoner);
+
         return new ResponseEntity<>(summoner, HttpStatus.OK);
     }
 }
