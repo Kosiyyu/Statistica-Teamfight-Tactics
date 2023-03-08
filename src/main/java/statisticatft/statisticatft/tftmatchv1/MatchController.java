@@ -33,9 +33,16 @@ public class MatchController {
 
     @GetMapping("/{globalRegion}/getmatchbymatchid/{id}")
     public String getMatchByMatchId(@PathVariable GlobalRegion globalRegion, @PathVariable String id) throws JsonProcessingException {
-        String jsonBody = riotAPIService.getMatchByPuuid(globalRegion, id);
-        ObjectMapper mapper = new ObjectMapper();
-        Match match = mapper.readValue(jsonBody, Match.class);//todo!!!
-        return "test";
+        //String jsonBody = riotAPIService.getMatchByMatchId(globalRegion, id);
+        String jsonBody = "";
+        try{
+            jsonBody = riotAPIService.getMatchByMatchId(globalRegion, id);
+        }
+        catch (Exception e){
+            System.out.println("Error: " + e);
+        }
+        //ObjectMapper mapper = new ObjectMapper();
+        //Match match = mapper.readValue(jsonBody, Match.class);//todo!!!
+        return jsonBody;
     }
 }

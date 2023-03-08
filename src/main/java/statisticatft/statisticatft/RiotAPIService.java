@@ -15,17 +15,24 @@ public class RiotAPIService {
     }
 
     public String getChallengerPlayers(Region region) {
-        String url = "https://" + region + ".api.riotgames.com/tft/status/v1/platform-data";
+        String url = "https://" + region.value + ".api.riotgames.com/tft/status/v1/platform-data";
         return riotAPIConfiguration.basicRequest(url, HttpMethod.GET).getBody();
     }
 
     public String searchSummonerBySummonerName(Region region, String summonerName) {
-        String url = "https://" + region + ".api.riotgames.com/tft/summoner/v1/summoners/by-name/" + summonerName;
+        String url = "https://" + region.value + ".api.riotgames.com/tft/summoner/v1/summoners/by-name/" + summonerName;
+        System.out.println(url);
         return riotAPIConfiguration.basicRequest(url, HttpMethod.GET).getBody();
     }
 
     public String getMatchByPuuid(GlobalRegion globalRegion, String puuid) {
-        String url = "https://" + globalRegion + ".api.riotgames.com/tft/match/v1/matches/by-puuid/" + puuid + "/ids";
+        String url = "https://" + globalRegion.value + ".api.riotgames.com/tft/match/v1/matches/by-puuid/" + puuid + "/ids";
+        return riotAPIConfiguration.basicRequest(url, HttpMethod.GET).getBody();
+    }
+
+    public String getMatchByMatchId(GlobalRegion globalRegion, String id) {
+        String url = "https://" + globalRegion.value + ".api.riotgames.com/tft/match/v1/matches/" + id;
+        //EUN1_3312537799
         return riotAPIConfiguration.basicRequest(url, HttpMethod.GET).getBody();
     }
 

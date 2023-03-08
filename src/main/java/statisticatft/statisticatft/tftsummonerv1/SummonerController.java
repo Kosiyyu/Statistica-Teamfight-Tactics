@@ -19,7 +19,7 @@ public class SummonerController {
 
     @GetMapping("{region}/searchbysummonername/{summonerName}")
     public ResponseEntity<Summoner> getSummonerByName(@PathVariable Region region, @PathVariable String summonerName) throws JsonProcessingException {
-        String jsonBody = riotAPIService.searchSummonerBySummonerName(Region.EUN1, summonerName);
+        String jsonBody = riotAPIService.searchSummonerBySummonerName(region, summonerName);
         ObjectMapper mapper = new ObjectMapper();
         Summoner summoner = mapper.readValue(jsonBody, Summoner.class);
         //do something with summoner object

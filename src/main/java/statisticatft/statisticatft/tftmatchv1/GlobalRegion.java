@@ -6,9 +6,9 @@ public enum GlobalRegion {
     EUROPE("europe"),//EU, TR and RU
     SEA("sea");//SEA and OCE?????????????????
 
-    public String region;
-    GlobalRegion(String region) {
-        this.region = region;
+    public String value;
+    GlobalRegion(String value) {
+        this.value = value;
     }
 
 }
